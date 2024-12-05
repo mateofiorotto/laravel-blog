@@ -1,11 +1,19 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//blog.test => welcome
+//blog.test/contact => contact
+//blog.test/blog => blog
+//blog.test/about => about
+
+Route::view('/', 'welcome')->name('home');
+Route::view('contact', 'contact')->name('contact');
+Route::view('about', 'about')->name('about');
+Route::get('blog', [PostController::class, 'index'])->name('blog');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
