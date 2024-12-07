@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -12,13 +14,23 @@ class PostController extends Controller
     public function index()
     {
 
-    $posts = [
-        ['title' => 'First Post'],
-        ['title' => 'Second Post'],
-        ['title' => 'Third Post'],
-        ['title' => 'Fourth Post'],
-    ];
+    $posts = Post::get();
 
-    return view('blog', ['posts' => $posts]);
+    return view('posts.index', ['posts' => $posts]);
     }
+
+    /**
+     * Show method
+     */
+    public function show(Post $post) {
+        return view('posts.show', ['post' => $post]);
+    }
+
+    /**
+     * Create post
+     */
+    // public function create()
+    // {
+    //     return 'create form';
+    // }
 }
