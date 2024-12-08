@@ -12,20 +12,31 @@
     <meta property="og:title" content="GoTravel">
     <meta property="og:description" content="GoTravel Website. Check Destinations for travel!">
     <meta name="twitter:card" content="summary_large_image">
-    <title>{{ $metaTitle ?? 'No title'}} | GoTravel</title>
+    <title>{{ $metaTitle ?? 'No title' }} | GoTravel</title>
 </head>
 
 <body>
     <!--Includes view partials/header-->
     @include('partials.header')
+    @if (session('status'))
+        <div class="status">
+            <P>{{ session('status') }}</p>
+        </div>
+    @endif
 
+    {{-- Other form to do:
+@session('status')
+    <div class="status">
+        <p>{{$value}}</p>
+    </div>
+@endsession --}}
     <main>
 
-    <!--Includes component blade view (all content)-->
-    {{ $slot }}
+        <!--Includes component blade view (all content)-->
+        {{ $slot }}
 
-    {{-- Optional sidebar --}}
-    {{-- @if (isset($sidebar))
+        {{-- Optional sidebar --}}
+        {{-- @if (isset($sidebar))
         <div id="sidebar">
             <h2>Sidebar</h2>
             <div>

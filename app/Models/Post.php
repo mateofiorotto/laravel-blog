@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $fillable = ['title', 'body'];
     //rewrite the name of x table, eloquent asumes that the table is "posts"
     // protected $table = 'articles';
 
