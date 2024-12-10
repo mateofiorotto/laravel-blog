@@ -1,21 +1,31 @@
-<x-layout meta-title='Create new Post' meta-description='Form to create new post'>
-    <h2>Create post</h2>
+<x-app-layout meta-title='Create new post' meta-description='Form to create new post'>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Create new post') }}
+        </h2>
+    </x-slot>
 
     {{-- FORM 1: Show errors --}}
     {{-- @foreach ($errors->all() as $error) 
         <p>{{$error}}</p>
     @endforeach --}}
 
-   {{-- Check laravel lang (github) if want to translate validations --}}
-    <form action="{{ route('posts.store')}}" method="POST">
-        {{-- necessary for method post --}}
-        @csrf
+    {{-- Check laravel lang (github) if want to translate validations --}}
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <form class="space-y-4 max-w-xl" action="{{ route('posts.store') }}" method="POST">
+                        {{-- necessary for method post --}}
+                        
 
-        @include('posts.form-fields')
-        
-        <button type="submit">Create</button>
-    </form>
+                        @include('posts.form-fields')
+                        <x-primary-button type="submit">Create</x-primary-button>
+                        @csrf
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <a href="{{route('posts.index')}}">Go back</a>
-
-    </x-layout>
+</x-app-layout>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -12,15 +12,16 @@
     <meta property="og:title" content="GoTravel">
     <meta property="og:description" content="GoTravel Website. Check Destinations for travel!">
     <meta name="twitter:card" content="summary_large_image">
-    <title>{{ $metaTitle ?? 'No title' }} | GoTravel</title>
+    <title>{{ $metaTitle }} | GoTravel</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="flex h-screen flex-col bg-slate-100 selection:bg-sky-600 selection:text-sky-50 dark:bg-slate-950 dark:text-slate-100">
     <!--Includes view partials/header-->
     @include('partials.header')
     @if (session('status'))
         <div class="status">
-            <P>{{ session('status') }}</p>
+            <P class="bg-green-600 p-4 text-xl text-green-50 dark:bg-green-800">{{ session('status') }}</p>
         </div>
     @endif
 
@@ -30,7 +31,7 @@
         <p>{{$value}}</p>
     </div>
 @endsession --}}
-    <main>
+    <main class="flex-1 p-4">
 
         <!--Includes component blade view (all content)-->
         {{ $slot }}
@@ -44,8 +45,8 @@
             </div>
         </div>
     @endif --}}
-
     </main>
+    <h1 class="hidden">{{Route::currentRouteName()}} | GoTravel</h1>
     <!--Includes view partials/footer-->
     @include('partials.footer')
 </body>
