@@ -39,6 +39,7 @@ if (themeMenu) {
     themeMenu.classList.add("hidden");
     localStorage.setItem("theme", theme);
   }
+
   function updateTheme(theme) {
     if (
       theme === "dark" ||

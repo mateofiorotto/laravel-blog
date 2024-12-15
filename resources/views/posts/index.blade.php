@@ -1,5 +1,8 @@
 <x-blog-layout meta-title='Blog' meta-description='Here you have all of the articles in the website!'>
-
+ {{-- Show sidebar (optional) --}}
+    {{-- <x-slot name="sidebar">
+        Home sidebar
+    </x-slot> --}}
     <div class="mx-auto mt-4 max-w-6xl">
         <h2 class="my-4 text-center text-4xl font-extrabold text-sky-600 md:text-5xl">Blog</h2>
     </div>

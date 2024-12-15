@@ -39,8 +39,6 @@
             </a>
             <div class="ml-8 hidden space-x-8 md:flex">
                 <nav>
-                    <a class="px-3 py-2 {{ request()->routeIs('home') ? 'text-sky-500' : ' text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500"' }}"
-                        href="{{ route('home') }}"> Home </a>
                     <a class="px-3 py-2 {{ request()->routeIs('posts.*') ? 'text-sky-500' : ' text-slate-600 transition-colors hover:text-sky-500 dark:text-slate-400 dark:hover:text-sky-500"' }}"
                         href="{{ route('posts.index') }}">
                         Blog
@@ -157,10 +155,6 @@
         </div>
     </div>
     <div id="mobile-menu" class="hidden space-y-1 border-t pb-3 pt-2 dark:border-slate-500">
-        <a href="{{ route('home') }}"
-            class="block rounded-md px-3 py-2 {{ request()->routeIs('home') ? 'bg-sky-500  text-white' : 'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}">
-            Home
-        </a>
         <a href="{{ route('posts.index') }}"
             class="block rounded-md px-3 py-2 {{ request()->routeIs('posts.*') ? 'bg-sky-500  text-white' : 'text-slate-700 transition-colors hover:bg-sky-500 hover:text-white dark:text-slate-400 dark:hover:text-white' }}">
             Blog
