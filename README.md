@@ -28,3 +28,15 @@ El proyecto incluye:
 - Formularios validados
 - Autenticación para CRUD y acceso al panel de control (login y registro usando Breeze, aunque el panel de control en sí aún no está desarrollado)
 
+---
+
+## 🖥️ Technologies
+- **JavaScript**
+- **Laravel**
+- **PHP**
+- **BLADE**
+- **HTML**
+- **CSS**
+- **Tailwind**
+
+---
